@@ -1,0 +1,30 @@
+schema_version: 1
+name: walking-v1
+phases:
+  - contact-a-forward
+  - down-a-support
+  - passing-a-support
+  - up-a-support
+  - contact-b-forward
+  - down-b-support
+  - passing-b-support
+  - up-b-support
+allowed_transitions:
+  contact-a-forward: [contact-a-forward, down-a-support]
+  down-a-support: [down-a-support, passing-a-support]
+  passing-a-support: [passing-a-support, up-a-support]
+  up-a-support: [up-a-support, contact-b-forward]
+  contact-b-forward: [contact-b-forward, down-b-support]
+  down-b-support: [down-b-support, passing-b-support]
+  passing-b-support: [passing-b-support, up-b-support]
+  up-b-support: [up-b-support, contact-a-forward]
+required_visual_checks:
+  - arm_opposition
+  - hands_free
+  - leg_tracks
+  - limb_continuity
+  - pose_continuity
+motion_continuity:
+  duplicate_mean_absolute_difference: 0.35
+  maximum_velocity_ratio: 5.0
+  maximum_seam_ratio: 3.5

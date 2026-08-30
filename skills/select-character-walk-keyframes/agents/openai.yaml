@@ -1,0 +1,4 @@
+interface:
+  display_name: "Walk Keyframe Selection"
+  short_description: "Select and validate a seamless walking loop"
+  default_prompt: "Use $select-character-walk-keyframes to select and preview a coherent walk loop."

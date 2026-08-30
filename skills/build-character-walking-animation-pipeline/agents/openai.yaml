@@ -1,0 +1,4 @@
+interface:
+  display_name: "Character Walking Pipeline"
+  short_description: "Guide a character walk from anchors to runtime"
+  default_prompt: "Use $build-character-walking-animation-pipeline to build or resume a character walking animation."

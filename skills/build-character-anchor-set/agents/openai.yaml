@@ -1,0 +1,4 @@
+interface:
+  display_name: "Character Anchor Set"
+  short_description: "Create and approve four character directions"
+  default_prompt: "Use $build-character-anchor-set to create and review a four-direction character anchor set."

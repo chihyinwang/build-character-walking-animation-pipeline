@@ -1,0 +1,4 @@
+interface:
+  display_name: "Character Walk Runtime Export"
+  short_description: "Align and export runtime walking spritesheets"
+  default_prompt: "Use $export-character-walk-runtime to export an approved walk loop to runtime assets."

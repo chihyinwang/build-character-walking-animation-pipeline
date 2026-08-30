@@ -1,0 +1,23 @@
+schema_version: 1
+asset_name: character-walking-direction
+candidates:
+  - file: 000001.png
+    usable: true
+    phase: contact-a-forward
+    state:
+      support_leg: B
+      swing_leg: A
+      front_leg: A
+      back_leg: B
+      foot_contact: double
+      swing_direction: forward
+      arm_opposition: true
+    visual_checks:
+      arm_opposition: pass
+      hands_free: pass
+      leg_tracks: pass
+      limb_continuity: pass
+      pose_continuity: pass
+    flags: []
+    confidence: 0.9
+    notes: concise visual evidence

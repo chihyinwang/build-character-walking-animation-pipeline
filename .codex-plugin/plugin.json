@@ -1,0 +1,18 @@
+{
+  "name": "build-character-walking-animation-pipeline",
+  "version": "0.1.0",
+  "description": "A provider-neutral, approval-gated character walking animation pipeline.",
+  "author": {
+    "name": "Community contributors"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Build Character Walking Animation Pipeline",
+    "shortDescription": "Build approved character walk sprites from anchors and user-made video.",
+    "longDescription": "Guides a character from a south anchor through directional review, manual video generation, semantic keyframe selection, optional pixel snap, and runtime export.",
+    "developerName": "Community contributors",
+    "category": "Developer Tools",
+    "capabilities": ["skills"],
+    "defaultPrompt": "Use $build-character-walking-animation-pipeline to build or resume a character walking animation."
+  }
+}

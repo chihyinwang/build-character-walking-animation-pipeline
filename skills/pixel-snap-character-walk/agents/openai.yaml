@@ -1,0 +1,4 @@
+interface:
+  display_name: "Optional Walk Pixel Snap"
+  short_description: "Compare optional pixel-snapped walk frames"
+  default_prompt: "Use $pixel-snap-character-walk to create a non-destructive pixel-snapped comparison."

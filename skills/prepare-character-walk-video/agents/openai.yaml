@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manual Walk Video Handoff"
+  short_description: "Prepare prompts and accept user-made walk videos"
+  default_prompt: "Use $prepare-character-walk-video to prepare a walk-video request and review my returned video."
