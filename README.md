@@ -2,6 +2,12 @@
 
 Want to automate the process of making 2D pixel-art character walking animations? You've come to the right place.
 
+## The result
+
+![A pixel-art NPC walking in four directions](assets/readme/npc-34-four-direction-walk.gif)
+
+This is the result I want from the pipeline: one character that can walk cleanly in every direction and loop without a visible hitch.
+
 ## The workflow
 
 1. Codex generates a South-facing anchor for you to approve.
@@ -10,6 +16,16 @@ Want to automate the process of making 2D pixel-art character walking animations
 4. Codex reviews the full video, proposes a walking loop, and shows you the result for approval.
 5. (Optional) Codex creates a per-frame pixel-snap comparison. You choose whether to keep the original or snapped frames.
 6. Codex exports the runtime frames, spritesheet, previews, and QA results for your final approval.
+
+## In the game
+
+Walking is the focus of this repository, but it is only one part of how I use the characters in *Mine Now*. These clips show the wider animation work around the game; the current repository does not generate these two actions.
+
+| Riding snatch | Finding the missing phone |
+| --- | --- |
+| ![A rider reaching out while passing](assets/readme/riding-snatch.gif) | ![A character realizing that her phone is missing](assets/readme/finding-phone-shock-hq.gif) |
+
+You can [play *Mine Now* on itch.io](https://jinwang.itch.io/mine-now) or [read the PDF for a detailed explanation of how the workflow works](https://drive.google.com/file/d/1Lz15sl7uysUfuICtlAp-vgcVwLhwSy9b/view?usp=sharing).
 
 ## Requirements
 
