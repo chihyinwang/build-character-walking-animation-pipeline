@@ -39,6 +39,22 @@ class PublicReleaseAuditTest(unittest.TestCase):
             result = self.run_audit(root, "--deny-token", "sensitive marker")
             self.assertEqual(1, result.returncode)
 
+    def test_worktree_metadata_and_virtualenv_are_ignored(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="release-audit-worktree-") as temporary:
+            root = Path(temporary)
+            (root / "scripts").mkdir()
+            (root / "skills").mkdir()
+            (root / ".git" / "objects").mkdir(parents=True)
+            (root / ".git" / "config").write_text("private working metadata\n", encoding="utf-8")
+            (root / ".venv" / "lib").mkdir(parents=True)
+            (root / ".venv" / "lib" / "dependency.py").write_text("import undeclared_package\n", encoding="utf-8")
+            self.assertEqual(0, self.run_audit(root).returncode)
+
+            (root / "__pycache__").mkdir()
+            result = self.run_audit(root)
+            self.assertEqual(1, result.returncode)
+            self.assertIn("release debris", result.stdout)
+
     def test_anchor_generation_is_never_delegated_to_the_user(self) -> None:
         readme = (PLUGIN / "README.md").read_text(encoding="utf-8")
         anchor_skill = (PLUGIN / "skills" / "build-character-anchor-set" / "SKILL.md").read_text(encoding="utf-8")

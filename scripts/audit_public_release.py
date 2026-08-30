@@ -11,7 +11,8 @@ from pathlib import Path
 
 
 TEXT_SUFFIXES = {".md", ".txt", ".py", ".json", ".yaml", ".yml", ".toml", ".ini", ".cfg"}
-FORBIDDEN_NAMES = {".git", ".DS_Store", "__pycache__", ".pytest_cache", ".mypy_cache"}
+IGNORED_WORKTREE_NAMES = {".git", ".venv", "venv"}
+FORBIDDEN_NAMES = {".DS_Store", "__pycache__", ".pytest_cache", ".mypy_cache"}
 EXTERNAL_IMPORTS = {"PIL", "numpy", "yaml", "imageio_ffmpeg"}
 
 
@@ -32,6 +33,8 @@ def audit(root: Path, deny_tokens: list[str]) -> list[str]:
 
     for path in sorted(root.rglob("*")):
         relative = path.relative_to(root).as_posix()
+        if any(part in IGNORED_WORKTREE_NAMES for part in path.parts):
+            continue
         if any(part in FORBIDDEN_NAMES for part in path.parts):
             errors.append(f"release debris: {relative}")
             continue

@@ -106,12 +106,3 @@ At each pause, Codex must give the user something concrete to review and name th
 5. Keyframe sheet, loop GIF, four-repeat GIF, and validation reports → `approve`, `reject`, or named transition notes.
 6. Optional original/snapped comparison → keep original or approve snapped candidate.
 7. Runtime sheet, transparent/light/dark previews, manifest, and QA → final approval or specific revision notes.
-
-## Validate
-
-```bash
-python3 -m unittest discover -s tests -p "test_*.py"
-python3 scripts/audit_public_release.py .
-```
-
-Run the Codex skill and plugin validators before publishing.
